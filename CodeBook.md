@@ -1,70 +1,70 @@
 #CodeBook
 
-#This is my code book that describes the variables, the data, 
-#and any transformations or work that I performed to clean up the data.
+This is my code book that describes the variables, the data, 
+and any transformations or work that I performed to clean up the data.
 
-- About the Data
+#About the Data
 Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-- Data frames with variable names and transformations
-#test_subjects data
+#Data frames with variable names and transformations
+-test_subjects data
 2947 obs. of  1 variable
 $ subject: int
 
-#test_data 
+-test_data 
 2947 obs. of  561 variables:
  V1 to V561 : num
  
-#test_labels
+-test_labels
 2947 obs. of  1 variable:
  $ label: int
  
-#train_labels
+-train_labels
 7352 obs. of  1 variable:
  $ label: int
  
-#train_subjects
+-train_subjects
 7352 obs. of  1 variable:
  $ subject: int
  
-#train_data
+-train_data
 7352 obs. of  561 variables:
  V1 to V561 : num
  
-#features
+-features
 561 obs. of  2 variables:
  $ V1: int  
  $ V2: chr  
 
-#labels
+-labels
 6 obs. of  2 variables:
  $ V1: int  
  $ V2: chr
  
- #data
+ -data
  column combine test_subjects, test_labels, test_data and
  column combine train_subjects, train_labels, train_data
  Then row combine those two.
  We get a data frame of 10299 obs. of  563 variables with the 
  same variables and type of variables as listed above in their initial data sets
  
- #featuresMeanStd
+ -featuresMeanStd
  keep features of mean and std dev
  66 obs. of  2 variables:
  $ V1: int 
  $ V2: chr
  
- #mean_SD_data
+ -mean_SD_data
  Extracts only the measurements on the mean and standard deviation for each measurement.
  Increment by 2 because of subjects and labels at the start
  10299 obs. of  68 variables:
  Some more transformation:
- - Use descriptive activity names to name the activities in the data set
- - replace labels in data with label names data frame
-   mean_SD_data$label <- labels[mean_SD_data$label, 2]
- - Appropriately labels the data set with descriptive variable names.
+ 	- Use descriptive activity names to name the activities in the data set
+ 	- replace labels in data with label names data frame
+  	 mean_SD_data$label <- labels[mean_SD_data$label, 2]
+ 	- Appropriately labels the data set with descriptive variable names.
 
 	create list called 'currentColNames' that has current column names and feature names
 	currentColNames <- c("subject", "label", featuresMeanStd$V2)
@@ -75,7 +75,7 @@ $ subject: int
 	apply currentColNames as column names for my data
 	colnames(mean_SD_data) <- currentColNames
 
-#tidyDataI
+- tidyDataI
  creates a second, independent tidy data set with the average of each variable for each activity
  and each subject using mean_SD_data data frame.
 
