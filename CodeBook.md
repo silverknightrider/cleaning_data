@@ -62,18 +62,24 @@ $ subject: int
  10299 obs. of  68 variables:
  Some more transformation:
  	- Use descriptive activity names to name the activities in the data set
+ 	
  	- replace labels in data with label names data frame
-  	 mean_SD_data$label <- labels[mean_SD_data$label, 2]
+  	
+  	  mean_SD_data$label <- labels[mean_SD_data$label, 2]
+ 	
  	- Appropriately labels the data set with descriptive variable names.
 
-	create list called 'currentColNames' that has current column names and feature names
-	currentColNames <- c("subject", "label", featuresMeanStd$V2)
+		create list called 'currentColNames' that has current column names and feature names
+	
+		currentColNames <- c("subject", "label", featuresMeanStd$V2)
 
-	clean list by putting everything to lower case and deleting all non-alphabetical character
-	currentColNames <- tolower(gsub("[^[:alpha:]]", "", currentColNames))
+		clean list by putting everything to lower case and deleting all non-alphabetical character
+	
+		currentColNames <- tolower(gsub("[^[:alpha:]]", "", currentColNames))
 
-	apply currentColNames as column names for my data
-	colnames(mean_SD_data) <- currentColNames
+		apply currentColNames as column names for my data
+		
+		colnames(mean_SD_data) <- currentColNames
 
 - tidyDataI
  creates a second, independent tidy data set with the average of each variable for each activity
