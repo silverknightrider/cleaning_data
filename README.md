@@ -13,6 +13,7 @@ The data has been downloaded from  https://d396qusza40orc.cloudfront.net/getdata
 - a README.md file (this file)
 - a run_analysis.R file (this contains the actual codes)
 - a CodeBook.md file (which describes the variable names and variable transformations)
+- the data in the working directory
 
 *My run_analysis.R :*
 
